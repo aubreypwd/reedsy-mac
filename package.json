@@ -1,0 +1,16 @@
+{
+  "name": "reedsy-mac",
+  "version": "1.0.0",
+  "description": "An (unofficial) native MacOS App for Reedsy (reedsybookeditor).",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "postinstall": "npm run build",
+    "build": "./node_modules/.bin/nativefier --name 'Reedsy' --platform 'Mac' --min-width 1265 --min-height 1024 --flash --verbose --darwin-dark-mode-support --icon ./icon.png --internal-urls '.*(facebook|google)*.' 'https://reedsy.com/#/books' ./build"
+  },
+  "author": "Aubrey Portwood",
+  "license": "GPL-3.0-or-later",
+  "devDependencies": {
+    "nativefier": "~10.1.0"
+  }
+}
