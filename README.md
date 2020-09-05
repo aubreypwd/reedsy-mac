@@ -12,4 +12,4 @@ Navigate over to the releases and download the latest version.
 2. `npm install`
 3. `npm run build`
 
-Doing the above will genearate an application for MacOS in `build/`. See `packages.json:scripts` for parameters `nativefier` uses to build the app.
+`npm run build` will built the application to `build/` and  `npm run copy` to copy the built app to `/Applications` (if you want to do that).

@@ -6,7 +6,9 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "postinstall": "npm run build",
-    "build": "./node_modules/.bin/nativefier --name 'Reedsy' --platform 'Mac' --min-width 1265 --min-height 1024 --flash --verbose --darwin-dark-mode-support --icon ./icon.png --internal-urls '.*(facebook|google)*.' 'https://reedsy.com/#/books' ./build"
+    "build": "npm run nativefy",
+    "nativefy": "./node_modules/.bin/nativefier --name 'Reedsy' --platform 'Mac' --min-width 1265 --min-height 1024 --flash --verbose --darwin-dark-mode-support --icon ./icon.png --internal-urls '.*(facebook|google)*.' 'https://reedsy.com/#/books' ./build",
+    "copy": "sudo rm -Rf /Applications/Reedsy.app && sudo cp -Rfa ./build/Reedsy-darwin-x64/Reedsy.app /Applications/Reedsy.app"
   },
   "author": "Aubrey Portwood",
   "license": "GPL-3.0-or-later",
