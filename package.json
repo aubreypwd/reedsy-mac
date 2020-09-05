@@ -5,14 +5,16 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "postinstall": "npm run build",
-    "build": "npm run nativefy",
-    "nativefy": "./node_modules/.bin/nativefier --name 'Reedsy' --platform 'Mac' --min-width 1265 --min-height 1024 --flash --verbose --darwin-dark-mode-support --icon ./icon.png --internal-urls '.*(facebook|google)*.' 'https://reedsy.com/#/books' ./build",
-    "copy": "sudo rm -Rf /Applications/Reedsy.app && sudo cp -Rfa ./build/Reedsy-darwin-x64/Reedsy.app /Applications/Reedsy.app"
+    "installsupport": "echo 'Run: [brew install graphicsmagick imagemagick] for additional DMG support.'",
+    "postinstall": "npm run installsupport",
+    "build": "npm run nativefier",
+    "nativefier": "./node_modules/.bin/nativefier --name 'Reedsy' --platform 'Mac' --min-width 1265 --min-height 1024  --width 1265 --height 1024 --flash --verbose --darwin-dark-mode-support --icon ./icon.png --internal-urls '.*(facebook|google)*.' 'https://reedsy.com/#/books' ./build",
+    "dist": "npm run build && mkdir -p dist/ && ./node_modules/.bin/create-dmg ./build/Reedsy-darwin-x64/Reedsy.app --overwrite --dmg-title=Reedsy --identity='Aubrey Portwood' ./dist"
   },
   "author": "Aubrey Portwood",
   "license": "GPL-3.0-or-later",
   "devDependencies": {
+    "create-dmg": "~5.3.0",
     "nativefier": "~10.1.0"
   }
 }
