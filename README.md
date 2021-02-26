@@ -8,13 +8,7 @@ An (unofficial) native MacOS App for Reedsy (reedsybookeditor).
 
 Navigate over to the [releases](https://github.com/aubreypwd/reedsy-mac/releases) and download the latest version, or install via:
 
-## Homebrew Cask
-
-```bash
-brew tap aubreypwd/homebrew-cask
-brew update
-brew install reedsy-mac
-```
+- [Homebrew...](https://github.com/aubreypwd/homebrew-cask#reedsy)
 
 # Development
 
